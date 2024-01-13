@@ -1,10 +1,21 @@
 function pageLoading() {
-  setTimeout(showLoading, 10);
+  setTimeout(showLoading, 0);
 }
 function showLoading() {
   document.querySelector(".page-loader").style.zIndex = "0";
   document.querySelector(".page-loader").style.transform = "translateY(-100%)";
 }
+
+let nextSlide=document.querySelector('.next');
+let prevSlide=document.querySelector('.prev');
+nextSlide.addEventListener('click',function(){
+  let items=document.querySelectorAll('.item');
+  document.querySelector('.slide').appendChild(items[0])
+})
+prevSlide.addEventListener('click',function(){
+  let items=document.querySelectorAll('.item');
+  document.querySelector('.slide').prepend(items[items.length-1])
+})
 
 const wrapper = document.querySelector(".slider-wrapper");
 const product = document.querySelector(".products-section");
@@ -178,7 +189,12 @@ function showVisible() {
 
 window.addEventListener("scroll", showVisible);
 
+
+
+
 //   add basket section
+
+
 if (document.readyState == "ready") {
   document.addEventListener("DOMContentLoaded", ready);
 } else {
@@ -208,6 +224,7 @@ function removeCartItem(event) {
 }
 
 function addBasket(imgsrc, name, price) {
+  let content=[]
   let divp = document.createElement("div");
   divp.classList.add("basketcart-items");
   let bsname = document.querySelectorAll(".basketcart-item-name span")
@@ -220,7 +237,7 @@ function addBasket(imgsrc, name, price) {
     }
   }
 
-  let content = `
+  content .push(`
                     <div class="basketcart-item-img">
                         <img src="${imgsrc}" width="50" height="50">
                     </div>
@@ -238,8 +255,26 @@ function addBasket(imgsrc, name, price) {
                             </span>
                         </button>
                     </div>
-    `;
+    `);
   divp.innerHTML = content;
+  basketItems.append(divp);
+  divp
+    .getElementsByClassName("btn-basketcart-remove")[0]
+    .addEventListener("click", removeCartItem);
+
+    
+  localStorage.setItem('basket',content);
+}
+let data=localStorage.getItem('basket')
+console.log(data)
+
+if(data !=''){
+  
+  let divp = document.createElement("div");
+  divp.classList.add("basketcart-items");
+  let basketItems = document.querySelectorAll(".basket-loader")[0];
+  
+  divp.innerHTML = data;
   basketItems.append(divp);
   divp
     .getElementsByClassName("btn-basketcart-remove")[0]

@@ -4,15 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <div class="container ">
-        <div id="message"></div>
-        <button id="btnGet">get message</button>
+    <div class="container">
+        <div class="slide">
+            <div class="item" style="background-image: url(./assets/img/1.jpg);">
+                <div class="content">
+                    <div class="name">beautiful slider</div>
+                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
+                    <button class="seemore">see</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(./assets/img/2.jpg);">
+                <div class="content">
+                    <div class="name">beautiful slider</div>
+                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
+                    <button class="seemore">see</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(./assets/img/3.jpg);">
+                <div class="content">
+                    <div class="name">beautiful slider</div>
+                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
+                    <button class="seemore">see</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(./assets/img/4.jpg);">
+                <div class="content">
+                    <div class="name">beautiful slider</div>
+                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
+                    <button class="seemore">see</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(./assets/img/5.jpg);">
+                <div class="content">
+                    <div class="name">beautiful slider</div>
+                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
+                    <button class="seemore">see</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(./assets/img/6.jpg);">
+                <div class="content">
+                    <div class="name">beautiful slider</div>
+                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
+                    <button class="seemore">see</button>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="prev">
+                <span class="material-symbols-outlined">
+                    arrow_back
+                    </span>
+            </button>
+            <button class="next">
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                    </span>
+            </button>
+        </div>
     </div>
 
     <script>
+        let next=document.querySelector('.next')
+        let prev=document.querySelector('.prev')
+        next.addEventListener('click',function(){
+            let items=document.querySelectorAll('.item');
+            document.querySelector('.slide').appendChild(items[0])
+        })
+        prev.addEventListener('click',function(){
+            let items=document.querySelectorAll('.item');
+            document.querySelector('.slide').prepend(items[items.length-1])
+        })
     </script>
-    <script src="./assets/js/test.js"></script>
 </body>
 </html>
