@@ -6,6 +6,7 @@ function showLoading() {
   document.querySelector(".page-loader").style.transform = "translateY(-100%)";
 }
 
+// make a simple slider
 let nextSlide=document.querySelector('.next');
 let prevSlide=document.querySelector('.prev');
 nextSlide.addEventListener('click',function(){

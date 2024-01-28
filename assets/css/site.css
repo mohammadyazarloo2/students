@@ -586,6 +586,9 @@ body.active .intoduce-contents p ,body.active .intoduce-contents h2{
   opacity: 0;
   transition: all 0.5s ease-in-out;
   box-shadow: 0 0 5px 3px #301e67;
+  position: absolute;
+    top: 0;
+    right: 0;
 }
 body.active .night {
   transform: translateX(0%);

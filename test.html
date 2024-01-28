@@ -69,16 +69,34 @@
     </div>
 
     <script>
-        let next=document.querySelector('.next')
-        let prev=document.querySelector('.prev')
-        next.addEventListener('click',function(){
-            let items=document.querySelectorAll('.item');
-            document.querySelector('.slide').appendChild(items[0])
-        })
-        prev.addEventListener('click',function(){
-            let items=document.querySelectorAll('.item');
-            document.querySelector('.slide').prepend(items[items.length-1])
-        })
+        function fun1(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve('found')
+                },2000)
+            })
+        }
+        function fun2(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve('404')
+                },2000)
+            })
+        }
+
+        function theEnd(data){
+            console.log('Finally we done')
+        }
+
+        function onSuccess(data){
+            console.log(data)
+        }
+        function onError(data){
+            console.log(data)
+        }
+
+        fun1().then(fun2).then(onSuccess).catch(onError).finally(theEnd);
+
     </script>
 </body>
 </html>
