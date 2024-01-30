@@ -2,8 +2,6 @@ function pageLoading() {
   setTimeout(showLoading, 0);
 }
 function showLoading() {
-  document.querySelector(".page-loader").style.zIndex = "0";
-  document.querySelector(".page-loader").style.transform = "translateY(-100%)";
 }
 
 // make a simple slider
