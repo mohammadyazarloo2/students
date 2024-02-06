@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+.music-player{
+    width: 400px;
+    height: 550px;
+    background-color: #e3edf7;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+.music-head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.artist-img{
+    width: 60%;
+    height: 40%;
+    margin: auto;
+    background-color: #ccc;
+    padding: 5px;
+    border-radius: 50%;
+}
+.artist-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.music-title{
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.music-title span{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.progress-details{
+    width: 100%;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 20px;
+}
+.progress-details .progress-bar{
+    position: relative;
+    display: block;
+    width: 50%;
+    height: 100%;
+    background-color: aqua;
+    border-radius: 20px;
+}
+.progress-bar span{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    border-radius: inherit;
+    transform: translateY(-25%);
+    right: -5px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.progress-bar:hover span{
+    opacity: 1;
+}
+
+.time{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-controls{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-controls span{
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    
+    cursor: pointer;
+    
+}

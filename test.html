@@ -4,99 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./assets/css/test.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap-icons/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="slide">
-            <div class="item" style="background-image: url(./assets/img/1.jpg);">
-                <div class="content">
-                    <div class="name">beautiful slider</div>
-                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
-                    <button class="seemore">see</button>
-                </div>
+
+    <div class="music-player">
+        <div class="music-head">
+            <div class="down-icon">
+                <i class="bi bi-chevron-down"></i>
             </div>
-            <div class="item" style="background-image: url(./assets/img/2.jpg);">
-                <div class="content">
-                    <div class="name">beautiful slider</div>
-                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
-                    <button class="seemore">see</button>
-                </div>
-            </div>
-            <div class="item" style="background-image: url(./assets/img/3.jpg);">
-                <div class="content">
-                    <div class="name">beautiful slider</div>
-                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
-                    <button class="seemore">see</button>
-                </div>
-            </div>
-            <div class="item" style="background-image: url(./assets/img/4.jpg);">
-                <div class="content">
-                    <div class="name">beautiful slider</div>
-                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
-                    <button class="seemore">see</button>
-                </div>
-            </div>
-            <div class="item" style="background-image: url(./assets/img/5.jpg);">
-                <div class="content">
-                    <div class="name">beautiful slider</div>
-                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
-                    <button class="seemore">see</button>
-                </div>
-            </div>
-            <div class="item" style="background-image: url(./assets/img/6.jpg);">
-                <div class="content">
-                    <div class="name">beautiful slider</div>
-                    <div class="des">lorem ipusum ro produce random text on descriptions </div>
-                    <button class="seemore">see</button>
-                </div>
+            <span>Now Playing</span>
+            <div class="expand-more">
+                <i class="bi bi-three-dots"></i>
             </div>
         </div>
-        <div class="buttons">
-            <button class="prev">
-                <span class="material-symbols-outlined">
-                    arrow_back
-                    </span>
-            </button>
-            <button class="next">
-                <span class="material-symbols-outlined">
-                    arrow_forward
-                    </span>
-            </button>
+        <div class="artist-img">
+            <img src="./assets/img/6.jpg" >
+        </div>
+        <div class="music-title">
+            <span>sorena</span>
+            <span>Duel</span>
+        </div>
+        <div class="progress-details">
+            <div class="progress-bar ">
+                <span></span>
+            </div>
+            <div class="time">
+                <span class="current">0:00</span>
+                <span class="final">05:00</span>
+            </div>
+        </div>
+        <div class="btn-controls">
+            <span class="repeat">
+                <i class="bi bi-repeat"></i>
+            </span>
+            <span class="prev">
+                <i class="bi bi-chevron-left"></i>
+            </span>
+            <span class="play">
+                <i class="bi bi-play"></i>
+            </span>
+            <span class="next">
+                <i class="bi bi-chevron-right"></i>
+            </span>
+            <span class="shuffle">
+                <i class="bi bi-shuffle"></i>
+            </span>
         </div>
     </div>
 
     <script>
-        function fun1(){
-            return new Promise((resolve,reject)=>{
-                setTimeout(()=>{
-                    resolve('found')
-                },2000)
-            })
-        }
-        function fun2(){
-            return new Promise((resolve,reject)=>{
-                setTimeout(()=>{
-                    resolve('404')
-                },2000)
-            })
-        }
-
-        function theEnd(data){
-            console.log('Finally we done')
-        }
-
-        function onSuccess(data){
-            console.log(data)
-        }
-        function onError(data){
-            console.log(data)
-        }
-
-        fun1().then(fun2).then(onSuccess).catch(onError).finally(theEnd);
-
+        
     </script>
 </body>
 </html>

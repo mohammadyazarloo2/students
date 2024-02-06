@@ -28,3 +28,20 @@ function getServicesCost(servies) {
   });
 }
 getUser(100).then(getServices).then(getServicesCost).then(console.log);
+
+
+
+let songs=[
+  {
+      name:'duel',
+      artist:'ali sorena',
+      img:'../img/3',
+      audio:'1',
+  },
+  {
+      name:'kalame obor',
+      artist:'pishro',
+      img:'../img/3',
+      audio:'2',
+  }
+]
