@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/site.css" />
+    <link rel="stylesheet" href="./assets/bootstrap-icons/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="./assets/img/1.jpg" id="content1" class="active">
+            <img src="./assets/img/2.jpg" id="content2">
+            <img src="./assets/img/3.jpg" id="content3">
+            <img src="./assets/img/4.jpg" id="content4">
+        </div>
+        <div class="dot-container">
+            <button onclick="dot(1)"></button>
+            <button onclick="dot(2)"></button>
+            <button onclick="dot(3)"></button>
+            <button onclick="dot(4)"></button>
+        </div>
+        <div class="btn-np">
+            <button id="prev" onclick="prev()">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button id="next" onclick="next()">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./assets/script.js">
+
+    </script>
+</body>
+
+</html>

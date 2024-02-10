@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auto</title>
+    <link rel="stylesheet" href="./assets/site.css">
+    <link rel="stylesheet" href="./assets/bootstrap-icons/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slides">
+            <img src="./assets/img/1.jpg" class="active">
+            <img src="./assets/img/2.jpg">
+            <img src="./assets/img/3.jpg">
+            <img src="./assets/img/4.jpg">
+        </div>
+        <div class="buttons">
+            <span class="next">
+                <i class="bi bi-chevron-right"></i>
+            </span>
+            <span class="prev">
+                <i class="bi bi-chevron-left"></i>
+            </span>
+        </div>
+        <div class="dotsContainer">
+            <div class="dot active" attr="0" onclick="switchImage(this)"></div>
+            <div class="dot" attr="1" onclick="switchImage(this)"></div>
+            <div class="dot" attr="2" onclick="switchImage(this)"></div>
+            <div class="dot" attr="3" onclick="switchImage(this)"></div>
+        </div>
+    </div>
+    <script src="./assets/script.js"></script>
+</body>
+</html>

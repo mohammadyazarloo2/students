@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,55 +8,35 @@
     <link rel="stylesheet" href="./assets/css/test.css" />
     <link rel="stylesheet" href="./assets/css/bootstrap-icons/font/bootstrap-icons.min.css">
 </head>
+
 <body>
 
-    <div class="music-player">
-        <div class="music-head">
-            <div class="down-icon">
-                <i class="bi bi-chevron-down"></i>
-            </div>
-            <span>Now Playing</span>
-            <div class="expand-more">
-                <i class="bi bi-three-dots"></i>
-            </div>
+    <div class="container">
+        <div class="image-container">
+            <img src="./assets/img/1.jpg" id="content1" class="active">
+            <img src="./assets/img/2.jpg" id="content2">
+            <img src="./assets/img/3.jpg" id="content3">
+            <img src="./assets/img/4.jpg" id="content4">
         </div>
-        <div class="artist-img">
-            <img src="./assets/img/6.jpg" >
+        <div class="dot-container">
+            <button onclick="dot(1)"></button>
+            <button onclick="dot(2)"></button>
+            <button onclick="dot(3)"></button>
+            <button onclick="dot(4)"></button>
         </div>
-        <div class="music-title">
-            <span>sorena</span>
-            <span>Duel</span>
-        </div>
-        <div class="progress-details">
-            <div class="progress-bar ">
-                <span></span>
-            </div>
-            <div class="time">
-                <span class="current">0:00</span>
-                <span class="final">05:00</span>
-            </div>
-        </div>
-        <div class="btn-controls">
-            <span class="repeat">
-                <i class="bi bi-repeat"></i>
-            </span>
-            <span class="prev">
+        <div class="btn-np">
+            <button id="prev" onclick="prev()">
                 <i class="bi bi-chevron-left"></i>
-            </span>
-            <span class="play">
-                <i class="bi bi-play"></i>
-            </span>
-            <span class="next">
+            </button>
+            <button id="next" onclick="next()">
                 <i class="bi bi-chevron-right"></i>
-            </span>
-            <span class="shuffle">
-                <i class="bi bi-shuffle"></i>
-            </span>
+            </button>
         </div>
     </div>
 
-    <script>
-        
+    <script type="text/javascript" src="./assets/js/test.js">
+
     </script>
 </body>
+
 </html>
