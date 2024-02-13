@@ -9,6 +9,7 @@ let j=4
 function next(){
   document.getElementById('content'+(i+1)).classList.remove('active')
   i=(j+i+1)%j
+  console.log(i)
   document.getElementById('content'+(i+1)).classList.add('active')
   indicator(i+1)
 }

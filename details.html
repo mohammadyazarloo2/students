@@ -54,10 +54,10 @@
         <nav>
             <ul class="menu">
                 <li class="menu-item">
-                    <a href="#" class="menu-link">صفحه اصلی</a>
+                    <a href="/" class="menu-link">صفحه اصلی</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">فروشگاه</a>
+                    <a href="./products.html" class="menu-link">فروشگاه</a>
                 </li>
                 <li class="menu-item">
                     <a href="#" class="menu-link">تماس با ما</a>
@@ -117,11 +117,11 @@
             <div class="bookmark">
                 <ul>
                     <li>
-                        <a href="#">صفحه اصلی</a>
+                        <a href="./index.html">صفحه اصلی</a>
                     </li>
                     <i class="bi bi-chevron-left"></i>
                     <li>
-                        <a href="#">محصولات</a>
+                        <a href="./products.html">محصولات</a>
                     </li>
                     <i class="bi bi-chevron-left"></i>
                     <li>
@@ -212,6 +212,14 @@
                         </div>
                     </div>
 
+                    <div class="add-to-basket">
+                        <form method="post">
+                            <input type="button" class="increment-basket" value="+">
+                            <input type="number" class="quantity-addBasket">
+                            <input type="button" class="decrement-basket" value="-">
+                        </form>
+                    </div>
+
                 </div>
             </div>
 
@@ -220,7 +228,7 @@
         </div>
         <div class="container-d">
             <div class="descriptions-product">
-                <div class="-description">
+                <div class="description">
                     <span class="content-title">توضیحات</span>
                     <p class="content-description">
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک
@@ -232,6 +240,9 @@
                         شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات
                         پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
                     </p>
+                    <div class="content-description-showmore">
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
                 </div>
             </div>
         </div>
