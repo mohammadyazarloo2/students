@@ -156,11 +156,28 @@ body.active .comments-form-title{
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 .left-d-img {
   width: auto;
   height: 300px;
+  position: relative;
 }
+.full-screen-image{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.full-screen-image i{
+  color: #191919;
+  font-size: 18px;
+}
+.full-screen-image:hover{
+  transform: scale(1.2);
+}
+
 .left-d-img img {
   width: auto;
   height: 100%;

@@ -181,6 +181,13 @@ for(let i=0;i<catoriesFilter.length;i++){
   
 
 }
+let fullScreenProduct=document.querySelector('.full-screen-image')
+
+fullScreenProduct.addEventListener('click',function(){
+  console.log(this.parentElement.querySelector('img').src)
+})
+
+
 
 
 
