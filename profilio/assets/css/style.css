@@ -7,12 +7,12 @@
   border: none;
 }
 :root {
-  --bg-color: #081b29;
-  --main-color: #00abf0;
+  --bg-color: #FFF0F5;
+  --main-color: #FF9843;
   --text-color: #333;
   --second-text-color: #555;
   --white-color: #fff;
-  --cover-color: linear-gradient(45deg, #00abf0, #006e9a);
+  --cover-color: linear-gradient(45deg, #FAF2D3, #FCE09B);
   --page-color: linear-gradient(90deg, #fff, #ddd);
   --border: 0.125rem solid #FFBB64;
   --box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
@@ -429,7 +429,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: auto;
     padding: 1.5rem;
   }
   .page{
@@ -446,8 +446,8 @@ body {
     justify-content: center;
   }
   .mypage-img img{
-    width: 100%;
-    height: 20rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     padding: 5px;
     background-color: var(--padding-back-color);
@@ -461,9 +461,15 @@ body {
   }
   .social-media-mobile{
     margin-top: 1rem;
-    height: 2rem;
+    height: auto;
     display: flex;
     justify-content: center;
+  }
+  .mypage-desc{
+    padding-top: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: center;
   }
   .social-media-mobile i{
     width: 3rem;
@@ -476,5 +482,19 @@ body {
     justify-content: center;
     color: #FF9843;
     margin: .3rem;
+  }
+  .social-media-mobile i:hover{
+    background: transparent;
+    color: var(--white-color);
+  }
+  .mypage-aboutme{
+    margin-top: 1rem;
+    font-size: .9rem;
+    text-align: center;
+    color: var(--text-color);
+  }
+  .btn-box{
+    margin-top: 1rem;
+    display: flex;
   }
 }
