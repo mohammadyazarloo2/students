@@ -41,43 +41,64 @@ contactMeBtn.onclick=()=>{
 
 
 // turn pages when click next or prev button
-const pageTurnBtnMobile=document.querySelectorAll('.nextprev-btn.mobile')
 
-pageTurnBtnMobile.forEach((el,index)=>{
-    el.onclick=()=>{
-        const pageTurnIdMobile=el.getAttribute('data-page')
-        const pageTurnMobile=document.getElementById(pageTurnIdMobile)
 
-        if(pageTurnMobile.classList.contains('turn')){
-            pageTurnMobile.classList.remove('turn')
-            pageTurnMobile.classList.remove('active')
-            setTimeout(()=>{
-                pageTurnMobile.style.zIndex=20-index
-            },500)
-        }else{
-            pageTurnMobile.classList.add('turn')
-            pageTurnMobile.classList.add('active')
-            setTimeout(()=>{
-                pageTurnMobile.style.zIndex=20+index
-            },500)
-        }
-    }
-})
 
-// contact me button when click
-const pagesMobile=document.querySelectorAll('.book-page.page-right.mobile')
-const contactMeBtnMobile=document.querySelector('.btn.contact-me.mobile')
 
-contactMeBtn.onclick=()=>{
-    pagesMobile.forEach((page,index)=>{
-        setTimeout(()=>{
-            page.classList.add('turn')
-            setTimeout(()=>{
-                page.style.zIndex=20+index
-            },500)
-        },(index+1) * 200 + 100)
-    })
+
+
+const dots=document.querySelectorAll('.dot-container button');
+const images=document.querySelectorAll('.slider .js-slider-item')
+
+let i=0;
+let j=2
+
+if(i === 0) {
+    document.querySelector("#prev").classList.remove("activeArrow")
+    document.querySelector("#next").classList.add("activeArrow")
+  } else {
+    document.querySelector("#prev").classList.add("activeArrow")
+    document.querySelector("#next").classList.remove("activeArrow")
+  }
+
+
+function next(){
+    console.log()
+    document.getElementById('page-'+(i+1)).classList.remove('active')
+    i=(j+i+1)%j
+    console.log(i)
+    document.getElementById('page-'+(i+1)).classList.add('active')
+    if(i === 2) {
+        document.querySelector("#next").classList.remove("activeArrow")
+        document.querySelector("#prev").classList.add("activeArrow")
+      } else {
+        document.querySelector("#prev").classList.add("activeArrow")
+    document.querySelector("#next").classList.remove("activeArrow")
+        
+      }
     
-}
+    
+  }
+  
+  function prev(){
+    document.getElementById('page-'+(i+1)).classList.remove('active')
+    i=(j+i-1)%j
+    document.getElementById('page-'+(i+1)).classList.add('active')
+    console.log('i:',i)
+    console.log('j:',j)
 
+    if(i === 0) {
+        document.querySelector("#prev").classList.remove('activeArrow'); 
+      } else {
+        document.querySelector("#prev").classList.add("activeArrow");
+      }
 
+    if(i === 2) {
+        document.querySelector("#next").classList.add("activeArrow")
+        document.querySelector("#prev").classList.remove("activeArrow")
+      } else {
+        document.querySelector("#prev").classList.remove("activeArrow")
+    document.querySelector("#next").classList.add("activeArrow") 
+        
+      }
+  }
