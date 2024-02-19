@@ -418,9 +418,11 @@ body {
   .wrapper {
     display: none;
   }
-  .cover {
+  .cover.mobile {
     width: 100%;
     transform-origin: unset;
+    padding: 20px;
+    height: auto;
   }
   .wrapper.mobile {
     display: block;
