@@ -1,93 +1,58 @@
-// turn pages when click next or prev button
-const pageTurnBtn = document.querySelectorAll(".nextprev-btn");
+// make a menu hover effect follow
 
-pageTurnBtn.forEach((el, index) => {
-  el.onclick = () => {
-    const pageTurnId = el.getAttribute("data-page");
-    const pageTurn = document.getElementById(pageTurnId);
+(function() {
 
-    if (pageTurn.classList.contains("turn")) {
-      pageTurn.classList.remove("turn");
-      setTimeout(() => {
-        pageTurn.style.zIndex = 20 - index;
-      }, 500);
-    } else {
-      pageTurn.classList.add("turn");
-      setTimeout(() => {
-        pageTurn.style.zIndex = 20 + index;
-      }, 500);
-    }
-  };
-});
-
-// contact me button when click
-const pages = document.querySelectorAll(".book-page.page-right");
-const contactMeBtn = document.querySelector(".btn.contact-me");
-
-contactMeBtn.onclick = () => {
-  pages.forEach((page, index) => {
-    setTimeout(() => {
-      page.classList.add("turn");
-      setTimeout(() => {
-        page.style.zIndex = 20 + index;
-      }, 500);
-    }, (index + 1) * 200 + 100);
-  });
-};
-
-// turn pages when click next or prev button
-
-const images = document.querySelectorAll(".js-slider-item");
-
-let i = 0;
-let j = images.length;
-console.log(j)
-
-if (i === 0) {
-  document.querySelector("#prev").classList.remove("activeArrow");
-  document.querySelector("#next").classList.add("activeArrow");
-} else {
-  document.querySelector("#prev").classList.add("activeArrow");
-  document.querySelector("#next").classList.remove("activeArrow");
-}
-
-function next() {
-  console.log();
-  document.getElementById("page-" + (i + 1)).classList.remove("active");
-  i = (j + i + 1) % j;
-  console.log(i);
-  document.getElementById("page-" + (i + 1)).classList.add("active");
-
-  document.querySelector("#prev").classList.add("activeArrow");
-  document.querySelector("#next").classList.add("activeArrow");
-
-  if (i === 0) {
-    document.querySelector("#prev").classList.remove("activeArrow");
-    document.querySelector("#next").classList.add("activeArrow");
-  }
-  if (i === j-1) {
-    document.querySelector("#next").classList.remove("activeArrow");
-    document.querySelector("#prev").classList.add("activeArrow");
-  }
+    const target = document.querySelector("#marker");
+    const links = document.querySelectorAll(".navbar .menu .menu-item .menu-link");
+    const colors = ["deepskyblue", "orange", "firebrick", "gold", "magenta", "black", "darkblue"];
   
-}
+    function mouseenterFunc() {
+      if (!this.parentNode.classList.contains("active")) {
+        for (let i = 0; i < links.length; i++) {
+          if (links[i].parentNode.classList.contains("active")) {
+            links[i].parentNode.classList.remove("active");
+          }
+          links[i].style.opacity = "0.25";
+        }
+  
+        this.parentNode.classList.add("active");
+        this.style.opacity = "1";
+  
+        const width = this.getBoundingClientRect().width;
+        const height = this.getBoundingClientRect().height;
+        const left = this.getBoundingClientRect().left + window.pageXOffset;
+        const top = this.getBoundingClientRect().top + window.pageYOffset;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+  
+        target.style.width = `${width}px`;
+        target.style.height = `${height}px`;
+        target.style.left = `${left}px`;
+        target.style.top = `${top}px`;
+        target.style.zIndex = '2';
+        target.style.borderColor = color;
+        target.style.transform = "none";
+      }
+    }
+  
+    for (let i = 0; i < links.length; i++) {
+      links[i].addEventListener("click", (e) => e.preventDefault());
+      links[i].addEventListener("mouseenter", mouseenterFunc);
+    }
+  
+    function resizeFunc() {
+      const active = document.querySelector(".mynav li.active");
+  
+      if (active) {
+        const left = active.getBoundingClientRect().left + window.pageXOffset;
+        const top = active.getBoundingClientRect().top + window.pageYOffset;
+  
+        target.style.left = `${left}px`;
+        target.style.top = `${top}px`;
+      }
+    }
+  
+    window.addEventListener("resize", resizeFunc);
+  
+  })();
 
-function prev() {
-  document.getElementById("page-" + (i + 1)).classList.remove("active");
-  i = (j + i - 1) % j;
-  document.getElementById("page-" + (i + 1)).classList.add("active");
-  console.log("i:", i);
-  console.log("j:", j);
 
-  document.querySelector("#prev").classList.add("activeArrow");
-  document.querySelector("#next").classList.add("activeArrow");
-
-  if (i === 0) {
-    document.querySelector("#next").classList.add("activeArrow");
-    document.querySelector("#prev").classList.remove("activeArrow");
-  }
-  if (i === j-1) {
-    document.querySelector("#next").classList.add("activeArrow");
-    document.querySelector("#prev").classList.remove("activeArrow");
-  }
-}
